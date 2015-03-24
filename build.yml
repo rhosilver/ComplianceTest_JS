@@ -18,9 +18,6 @@ iphone:
   sdk: "iphoneos7.1"
   provisionprofile: "iOS Team Provisioning Profile"
   production:
-    mobileprovision_file: "./production/iOS_Team_Provisioning_Profile.mobileprovision"
-    certificate_file: "./production/Certificatesnew.p12"
-    certificate_password: "Rhoelements10"
   codesignidentity: "iPhone Developer: Sunil Kumar (W8L77BLH6N)"
   BundleIdentifier: "com.rhomobile.compliancetestjs"
   BundleURLScheme: "compliancetestjs"
