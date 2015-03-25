@@ -9,15 +9,16 @@ applog: "rholog.txt"
 #capabilities:
 #  - read_sdcard
 #  - write_sdcard
-rhohub:
-  url: "https://appstaging.rhohub.com/api/v1/"
-connection:
-  proxy: "http://wwwgate0.mot.com:1080"
+#rhohub:
+#  url: "https://appstaging.rhohub.com/api/v1/"
+#connection:
+#  proxy: "http://wwwgate0.mot.com:1080"
 iphone:
   configuration: "Release"
   sdk: "iphoneos7.1"
-  provisionprofile: "iOS Team Provisioning Profile"
-  production:
+  entitlements: ./production/Entitlements.plist
+#  provisionprofile: "iOS Team Provisioning Profile"
+#  production:
   codesignidentity: "iPhone Developer: Sunil Kumar (W8L77BLH6N)"
   BundleIdentifier: "com.rhomobile.compliancetestjs"
   BundleURLScheme: "compliancetestjs"
