@@ -1,7 +1,7 @@
 sdkversion: "3.5.0"
 name: "compliancetest_js"
 app_type: "rhoelements"
-version: "1.0"
+version: "5.0"
 vendor: "rhomobile"
 build: "release"
 bbver: "4.6"
