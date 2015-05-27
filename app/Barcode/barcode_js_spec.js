@@ -109,7 +109,7 @@ describe("Barcode Compliance JS Test", function() {
 				});
 
 			describe("Barcode Test with "+ scnid +": " + scntype , function() {
-				if (Rho.System.isMotorolaDevice == true) 
+				if (Rho.System.isSymbolDevice == true) 
 				{
 					it("VT200-0335 | Enable with callback as function |" + scnid + scntype , function() {
 						displayObjective("VT200-0335 |Enable with callback as function| " + scnid + scntype);
@@ -323,7 +323,7 @@ describe("Barcode Compliance JS Test", function() {
 						});
 					});
 
-				if (Rho.System.isMotorolaDevice == true) 
+				if (Rho.System.isSymbolDevice == true) 
 				{
 					it("VT200-0344 | autotenter true with setproperty |"+ scnid, function() {
 						displayObjective("VT200-0344 | autotenter true with setproperty | ");
@@ -514,7 +514,7 @@ describe("Barcode Compliance JS Test", function() {
 					dispExpectedResult("all the supported properties should return in async callback");
 					_result.waitToRunTest();
 					runs(function() {
-						objSCN.enable();
+						objSCN.enable(); // need to enable the scanner to get its scannerproperty.
 						setTimeout(function() {             
 							enableFlag = true;
 						}, ENABLE8K);
@@ -538,16 +538,16 @@ describe("Barcode Compliance JS Test", function() {
 					dispExpectedResult("It should return the Scanner scannerType");
 					_result.waitToRunTest();
 					runs(function() {
-						var data = objSCN.getProperties(['scannerType']);
-						callbacktake(data);
+						objSCN.enable(); // need to enable the scanner to get its scannerproperty.
 						setTimeout(function() {
-							enableFlag = true;
+							var data = objSCN.getProperties(['scannerType']);
+							callbacktake(data);
 						}, 4000);
 					});
-					waitsFor(function(){
-						return enableFlag;
-					}, '5sec wait to enable the Scanner', 5000);
 					_result.waitForResponse();
+					runs(function() {
+						objSCN.disable();
+					});
 				});
 
 				it("VT200-0531 | call getProperties() with scannerType with callback |"+ scnid, function() {
@@ -556,15 +556,15 @@ describe("Barcode Compliance JS Test", function() {
 					dispExpectedResult("It should return the Scanner scannerType");
 					_result.waitToRunTest();
 					runs(function(){
-						objSCN.getProperties(['scannerType'],callbacktake);
+						objSCN.enable(); // need to enable the scanner to get its scannerproperty.
 						setTimeout(function() {
-							enableFlag = true;
+							objSCN.getProperties(['scannerType'],callbacktake);
 						}, 4000);
 					});
-					waitsFor(function(){
-						return enableFlag;
-					}, '5sec wait to enable the Scanner', 5000);
 					_result.waitForResponse();
+					runs(function() {
+						objSCN.disable();
+					});
 				});
 
 				it("VT200-0532 | call getProperty() with scannerType with anonymous callback |"+ scnid, function() {
@@ -573,15 +573,15 @@ describe("Barcode Compliance JS Test", function() {
 					dispExpectedResult("It should return the Scanner scannerType");
 					_result.waitToRunTest();
 					runs(function(){
-						objSCN.getProperty('scannerType',function(data){dispVerificationStatus(JSON.stringify(data));});
+						objSCN.enable(); // need to enable the scanner to get its scannerproperty.
 						setTimeout(function() {
-							enableFlag = true;
+							objSCN.getProperty('scannerType',function(data){dispVerificationStatus(JSON.stringify(data));});
 						}, 4000);
 					});
-					waitsFor(function(){
-						return enableFlag;
-					}, '5sec wait to enable the Scanner', 5000);
 					_result.waitForResponse();
+					runs(function() {
+						objSCN.disable();
+					});					
 				});
 
 				it("VT200-0533 | call setDefault and getDefault |" + scnid, function() {

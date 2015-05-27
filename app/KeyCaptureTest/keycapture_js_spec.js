@@ -89,7 +89,7 @@ describe("KeyCapture Test", function() {
 					setObjective("VT200-0353 | call captureKey with different callback for 2 different keys");
 					setInstruction("Press " +hardwareKeysTest.testKey11.description+", Press numeric key " +hardwareKeysTest.testKey15.description);
 					setExpected("2 different Callback should fire after pressing " +hardwareKeysTest.testKey11.description+" and " +hardwareKeysTest.testKey15.description+ ". Key" + hardwareKeysTest.testKey11.description + " should not dispatch and other should dispatch" );
-					Rho.KeyCapture.captureKey(true,hardwareKeysTest.testKey13.string,capturekeycallback);
+					Rho.KeyCapture.captureKey(true,hardwareKeysTest.testKey15.string,capturekeycallback);
 					Rho.KeyCapture.captureKey(false,hardwareKeysTest.testKey11.string,capturekeycallback2);
 				});
 
@@ -100,7 +100,7 @@ describe("KeyCapture Test", function() {
 					}, "Timed out waiting for tester to respond", 300000);
 					runs(function() {
 					expect("pass").toEqual(document.getElementById("actResult").innerHTML);
-					Rho.KeyCapture.captureKey(true,hardwareKeysTest.testKey13.string);
+					Rho.KeyCapture.captureKey(true,hardwareKeysTest.testKey15.string);
 					Rho.KeyCapture.captureKey(true,hardwareKeysTest.testKey11.string);
 					});	
 				});
@@ -168,6 +168,8 @@ describe("KeyCapture Test", function() {
 							setInstruction("click inside the textbox Press " + hardwareKeysTest.testKey18.description + " and " + hardwareKeysTest.testKey21.description);
 							setExpected( hardwareKeysTest.testKey18.description + " should be displayed after pressing both keys");
 							Rho.KeyCapture.remapKey(hardwareKeysTest.testKey18.string,hardwareKeysTest.testKey21.string);
+							Rho.KeyCapture.captureKey(true,hardwareKeysTest.testKey18.string,capturekeycallback);
+							Rho.KeyCapture.captureKey(false,hardwareKeysTest.testKey21.string,capturekeycallback2);						
 						});
 
 						runs(function()
@@ -176,8 +178,10 @@ describe("KeyCapture Test", function() {
 							return document.getElementById("actResult").innerHTML != "init";
 							}, "Timed out waiting for tester to respond", 300000);
 							runs(function() {
-							expect("pass").toEqual(document.getElementById("actResult").innerHTML);
-							Rho.KeyCapture.remapKey(hardwareKeysTest.testKey18.string,'');
+								expect("pass").toEqual(document.getElementById("actResult").innerHTML);
+								Rho.KeyCapture.remapKey(hardwareKeysTest.testKey18.string,'');
+								Rho.KeyCapture.captureKey(true,hardwareKeysTest.testKey18.string);
+								Rho.KeyCapture.captureKey(false,hardwareKeysTest.testKey21.string);							
 							});	
 						});
 					});
