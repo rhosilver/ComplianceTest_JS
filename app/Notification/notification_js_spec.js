@@ -36,7 +36,7 @@ describe("Notification Manual FD Tests", function () {
 			
 		});
 
-		it("VT200-0396 | Play File - Mp3 file with media type|", function () {
+		it("VT200-0396 | Play File - Mp3 file for Android or Wav file for WINDOWS with media type|", function () {
 		
 			dispTestCaseRunning(jasmine.getEnv().currentSpec.description);
 			dispExpectedResult("MP3 file should be played");
@@ -45,7 +45,14 @@ describe("Notification Manual FD Tests", function () {
 			_result.waitToRunTest();
 
 			runs(function () {
-				Rho.Notification.playFile(Rho.RhoFile.join(Rho.Application.modelFolderPath('Notification'), 'media1.mp3'), '.mp3');
+				if (isWindowsMobilePlatform())
+				{
+					Rho.Notification.playFile(Rho.RhoFile.join(Rho.Application.modelFolderPath('Notification'), 'media2.wav'), '.wav');
+				}
+				else
+				{
+					Rho.Notification.playFile(Rho.RhoFile.join(Rho.Application.modelFolderPath('Notification'), 'media1.mp3'), '.mp3');
+				}
 			});
 
 			//Common Method implemented to wait for tester to make it pass or fail.Code available in specHelper.js
