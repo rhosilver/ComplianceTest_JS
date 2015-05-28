@@ -30,6 +30,7 @@ iphone:
     - sensor
     - printing
     - printing_zebra
+    - mediacapture
 wp:
   productid: "88e69430-071c-0131-3d46-606720a825c8"
 symbian:
@@ -51,6 +52,7 @@ android:
     - sensor
     - printing
     - printing_zebra
+    - mediacapture
 wm:
 #sdk: "Windows Mobile 6.5.3 Professional DTK (ARMV4I)"
  #sdk: "MC3000c50b (ARMV4I)"
@@ -65,3 +67,4 @@ wm:
     - sensor
     - printing
     - printing_zebra
+    - mediacapture
