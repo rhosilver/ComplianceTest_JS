@@ -16,7 +16,7 @@ applog: "rholog.txt"
 iphone:
   configuration: "Release"
   sdk: "iphoneos8.1"
-  entitlements: ./production/Entitlements.plist
+  entitlements: "./production/Entitlements.plist"
 #  provisionprofile: "iOS Team Provisioning Profile"
 #  production:
   codesignidentity: "iPhone Developer"
