@@ -14,23 +14,14 @@ applog: "rholog.txt"
 #connection:
 #  proxy: "http://wwwgate0.mot.com:1080"
 iphone:
-  configuration: "Release"
-  sdk: "iphoneos8.2"
-   entitlements: ./production/Entitlements.plist
-#  provisionprofile: "iOS Team Provisioning Profile"
-#  production:
+  configuration: Release
+  sdk: iphoneos8.3
+  provisionprofile:
   codesignidentity: "iPhone Developer"
-  BundleIdentifier: "com.rhomobile.compliancetestjs"
-  BundleURLScheme: "compliancetestjs"
-  extensions:
-    - rhoconnect-client
-    - audiocapture
-    - mediaplayer
-    - screenorientation
-    - sensor
-    - printing
-    - printing_zebra
-    - mediacapture
+  entitlements: ./production/Entitlements.plist
+  BundleIdentifier: com.rhomobile.compliancetestjs
+  BundleURLScheme: compliancetestjs
+  extensions: ["nativeBridgeTest", "barcode", "sensor", "screenorientation", "audiocapture", "mediacapture"]
 wp:
   productid: "88e69430-071c-0131-3d46-606720a825c8"
 symbian:
