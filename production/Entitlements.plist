@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>NCMY892Z6W.*</string>
+	<string>M9VP49Q7N6.com.rhomobile.compliancetestjs</string>
 	<key>com.apple.developer.team-identifier</key>
 	<string>3GE3R24TYZ</string>
 	<key>get-task-allow</key>
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>NCMY892Z6W.*</string>
+	 <string>M9VP49Q7N6.com.rhomobile.compliancetestjs</string>
 	</array>
 </dict>
 </plist>
