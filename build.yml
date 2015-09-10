@@ -6,7 +6,7 @@ vendor: "rhomobile"
 build: "release"
 bbver: "4.6"
 applog: "rholog.txt"
-encrypt_database: 1
+encrypt_database: 0
 #capabilities:
 #  - read_sdcard
 #  - write_sdcard
