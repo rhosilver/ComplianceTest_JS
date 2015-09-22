@@ -27,6 +27,9 @@ function getlockWindowSize()
 function getscreenAutoRotate()
 {
 	data = Rho.System.getProperty('screenAutoRotate');
+	alert("Get"+data);
+	data1 = Rho.System.screenAutoRotate;
+	alert("Direct"+data1);
 	$("#Rho_System_screenAutoRotate span.result").text(JSON.stringify(data));
 }
 
