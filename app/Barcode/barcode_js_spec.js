@@ -362,7 +362,7 @@ describe("Barcode Compliance JS Test", function() {
 
 						runs(function() {		
 							if(isAndroid) {
-								objSCN.decodeSound = 'file://sdcard/decode.wav';
+								objSCN.decodeSound = 'file://sdcard/alarm5.wav';
 							}
 							else {
 								objSCN.decodeSound = 'file://Application/alarm5.wav';
